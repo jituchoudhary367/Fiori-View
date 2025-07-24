@@ -1,0 +1,312 @@
+<mvc:View controllerName="pujitu.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Page id="page" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+            <ScrollContainer id="_IDGenScrollContainer" height="100%" width="100%" vertical="true">
+
+                <!-- Application Header -->
+                <Panel id="_IDGenPanel" headerText="B2B Business Loan Application" class="sapUiMediumMargin" expandable="true" expanded="true">
+                    <content>
+                        <f:SimpleForm id="applicationInfoForm"
+                            layout="ResponsiveGridLayout"
+                            title="Application Information"
+                            labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                            columnsXL="1" columnsL="1" columnsM="1">
+                            <f:content>
+                                <Label id="_IDGenLabel" text="Application ID:" />
+                                <Input id="applicationId" value="{/applicationInfo/applicationId}" />
+
+                                <Label id="_IDGenLabel1" text="Application Date:" required="true" />
+                                <DatePicker id="applicationDate" value="{/applicationInfo/applicationDate}" />
+
+                                <Label id="_IDGenLabel2" text="Loan Type:" required="true" />
+                                <ComboBox id="loanType" value="{/applicationInfo/loanType}">
+                                    <core:Item id="_IDGenItem" key="business_loan" text="Business Loan" />
+                                    <core:Item id="_IDGenItem1" key="working_capital" text="Working Capital Loan" />
+                                    <core:Item id="_IDGenItem2" key="equipment_financing" text="Equipment Financing" />
+                                    <core:Item id="_IDGenItem3" key="trade_finance" text="Trade Finance" />
+                                </ComboBox>
+
+                                <Label id="_IDGenLabel3" text="Requested Amount (USD):" required="true" />
+                                <Input id="requestedAmount" value="{/applicationInfo/requestedAmount}" type="Number" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </content>
+                </Panel>
+
+                <!-- Company Details Panel -->
+                <Panel id="_IDGenPanel1" headerText="Company Information" class="sapUiMediumMargin" expandable="true" expanded="true">
+                    <content>
+                        <f:SimpleForm id="companyDetailsForm"
+                            layout="ResponsiveGridLayout"
+                            title="Company Details"
+                            labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                            columnsXL="1" columnsL="1" columnsM="1">
+                            <f:content>
+                                <Label id="_IDGenLabel4" text="Company Name:" required="true" />
+                                <Input id="companyName" value="{/companyDetails/companyName}" />
+
+                                <Label id="_IDGenLabel5" text="Legal Form:" required="true" />
+                                <ComboBox id="legalForm" value="{/companyDetails/legalForm}">
+                                    <core:Item id="_IDGenItem5" key="private_limited" text="Private Limited Company" />
+                                    <core:Item id="_IDGenItem4" key="public_limited" text="Public Limited Company" />
+                                    <core:Item id="_IDGenItem7" key="partnership" text="Partnership Firm" />
+                                    <core:Item id="_IDGenItem6" key="proprietorship" text="Sole Proprietorship" />
+                                    <core:Item id="_IDGenItem8" key="llp" text="Limited Liability Partnership" />
+                                </ComboBox>
+
+                                <Label id="_IDGenLabel6" text="Registration Number:" required="true" />
+                                <Input id="registrationNumber" value="{/companyDetails/registrationNumber}" />
+
+                                <Label id="_IDGenLabel7" text="Tax ID:" required="true" />
+                                <Input id="taxId" value="{/companyDetails/taxId}" />
+
+                                <Label id="_IDGenLabel8" text="GST Number:" />
+                                <Input id="gstNumber" value="{/companyDetails/gstNumber}" />
+
+                                <Label id="_IDGenLabel9" text="Date of Incorporation:" required="true" />
+                                <DatePicker id="incorporationDate" value="{/companyDetails/incorporationDate}" />
+
+                                <Label id="_IDGenLabel10" text="Business Type:" required="true" />
+                                <Input id="businessType" value="{/companyDetails/businessType}" />
+
+                                <Label id="_IDGenLabel11" text="Industry:" required="true" />
+                                <ComboBox id="industry" value="{/companyDetails/industry}">
+                                    <core:Item id="_IDGenItem9" key="technology" text="Technology" />
+                                    <core:Item id="_IDGenItem10" key="manufacturing" text="Manufacturing" />
+                                    <core:Item id="_IDGenItem11" key="retail" text="Retail" />
+                                    <core:Item id="_IDGenItem12" key="healthcare" text="Healthcare" />
+                                    <core:Item id="_IDGenItem13" key="finance" text="Finance" />
+                                    <core:Item id="_IDGenItem14" key="real_estate" text="Real Estate" />
+                                </ComboBox>
+
+                                <Label id="_IDGenLabel12" text="Number of Employees:" required="true" />
+                                <Input id="employees" value="{/companyDetails/employees}" type="Number" />
+
+                                <Label id="_IDGenLabel13" text="Annual Turnover (USD):" required="true" />
+                                <Input id="annualTurnover" value="{/companyDetails/annualTurnover}" type="Number" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </content>
+                </Panel>
+
+                <!-- Contact Details Panel -->
+                <Panel id="contactInfoPanel" headerText="Contact Information" class="sapUiMediumMargin" expandable="true" expanded="true">
+                    <content>
+                        <f:SimpleForm id="contactDetailsForm"
+                            layout="ResponsiveGridLayout"
+                            title="Address &amp; Contact Details"
+                            labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                            columnsXL="1" columnsL="1" columnsM="1">
+                            <f:content>
+                                <Title id="_IDGenTitle" text="Registered Address" />
+
+                                <Label id="_IDGenLabel14" text="Street Address:" required="true" />
+                                <TextArea id="regStreet" value="{/contactDetails/registeredAddress/street}" rows="2" />
+
+                                <Label id="_IDGenLabel15" text="City:" required="true" />
+                                <Input id="regCity" value="{/contactDetails/registeredAddress/city}" />
+
+                                <Label id="_IDGenLabel16" text="State/Province:" required="true" />
+                                <Input id="regState" value="{/contactDetails/registeredAddress/state}" />
+
+                                <Label id="_IDGenLabel17" text="Postal Code:" required="true" />
+                                <Input id="regPostalCode" value="{/contactDetails/registeredAddress/postalCode}" />
+
+                                <Label id="_IDGenLabel18" text="Country:" required="true" />
+                                <ComboBox id="regCountry" value="{/contactDetails/registeredAddress/country}">
+                                    <core:Item id="_IDGenItem15" key="US" text="United States" />
+                                    <core:Item id="_IDGenItem16" key="CA" text="Canada" />
+                                    <core:Item id="_IDGenItem17" key="IN" text="India" />
+                                    <core:Item id="_IDGenItem18" key="UK" text="United Kingdom" />
+                                    <core:Item id="_IDGenItem19" key="AU" text="Australia" />
+                                </ComboBox>
+
+                                <Title id="_IDGenTitle1" text="Primary Contact Person" />
+
+                                <Label id="_IDGenLabel19" text="Contact Name:" required="true" />
+                                <Input id="primaryContactName" value="{/contactDetails/primaryContact/name}" />
+
+                                <Label id="_IDGenLabel20" text="Designation:" required="true" />
+                                <Input id="primaryContactDesignation" value="{/contactDetails/primaryContact/designation}" />
+
+                                <Label id="_IDGenLabel21" text="Phone:" required="true" />
+                                <Input id="primaryContactPhone" value="{/contactDetails/primaryContact/phone}" type="Tel" />
+
+                                <Label id="_IDGenLabel22" text="Email:" required="true" />
+                                <Input id="primaryContactEmail" value="{/contactDetails/primaryContact/email}" type="Email" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </content>
+                </Panel>
+
+                <!-- Financial Information Panel -->
+                <Panel id="_IDGenPanel2" headerText="Financial Information" class="sapUiMediumMargin" expandable="true" expanded="true">
+                    <content>
+                        <f:SimpleForm id="financialInfoForm"
+                            layout="ResponsiveGridLayout"
+                            title="Financial Details"
+                            labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                            columnsXL="1" columnsL="1" columnsM="1">
+                            <f:content>
+                                <Label id="_IDGenLabel23" text="Credit Rating:" />
+                                <ComboBox id="creditRating" value="{/financialInformation/creditRating}">
+                                    <core:Item id="_IDGenItem20" key="AAA" text="AAA - Excellent" />
+                                    <core:Item id="_IDGenItem21" key="AA" text="AA - Very Good" />
+                                    <core:Item id="_IDGenItem22" key="A" text="A - Good" />
+                                    <core:Item id="_IDGenItem23" key="BBB" text="BBB - Satisfactory" />
+                                    <core:Item id="_IDGenItem24" key="BB" text="BB - Adequate" />
+                                    <core:Item id="_IDGenItem25" key="B" text="B - Fair" />
+                                </ComboBox>
+
+                                <Label id="_IDGenLabel24" text="Current Bank:" required="true" />
+                                <Input id="currentBank" value="{/financialInformation/currentBank}" />
+
+                                <Label id="_IDGenLabel25" text="Account Type:" required="true" />
+                                <ComboBox id="accountType" value="{/financialInformation/accountType}">
+                                    <core:Item id="_IDGenItem26" key="current" text="Current Account" />
+                                    <core:Item id="_IDGenItem27" key="savings" text="Savings Account" />
+                                    <core:Item id="_IDGenItem28" key="business" text="Business Account" />
+                                </ComboBox>
+
+                                <Label id="_IDGenLabel26" text="Current Account Balance (USD):" />
+                                <Input id="accountBalance" value="{/financialInformation/accountBalance}" type="Number" />
+
+                                <Label id="_IDGenLabel27" text="Existing Loans Outstanding (USD):" />
+                                <Input id="existingLoans" value="{/financialInformation/existingLoans}" type="Number" />
+
+                                <Label id="_IDGenLabel28" text="Monthly EMI Commitments (USD):" />
+                                <Input id="monthlyEMI" value="{/financialInformation/monthlyEMI}" type="Number" />
+
+                                <Title id="_IDGenTitle2" text="Financial Ratios (Optional)" />
+
+                                <Label id="_IDGenLabel29" text="Debt to Equity Ratio:" />
+                                <Input id="debtToEquity" value="{/financialInformation/debtToEquity}" type="Number" />
+
+                                <Label id="_IDGenLabel30" text="Current Ratio:" />
+                                <Input id="currentRatio" value="{/financialInformation/currentRatio}" type="Number" />
+
+                                <Label id="_IDGenLabel31" text="Interest Coverage Ratio:" />
+                                <Input id="interestCoverage" value="{/financialInformation/interestCoverage}" type="Number" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </content>
+                </Panel>
+
+                <!-- Loan Purpose Panel -->
+                <Panel id="loanPurposePanel" headerText="Loan Purpose &amp; Requirements" class="sapUiMediumMargin" expandable="true" expanded="true">
+                    <content>
+                        <f:SimpleForm id="loanPurposeForm"
+                            layout="ResponsiveGridLayout"
+                            title="Loan Details"
+                            labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0"
+                            columnsXL="1" columnsL="1" columnsM="1">
+                            <f:content>
+                                <Label id="_IDGenLabel32" text="Purpose of Loan:" required="true" />
+                                <ComboBox id="loanPurpose" value="{/loanPurpose/purpose}">
+                                    <core:Item id="_IDGenItem29" key="business_expansion" text="Business Expansion" />
+                                    <core:Item id="_IDGenItem30" key="working_capital" text="Working Capital" />
+                                    <core:Item id="_IDGenItem31" key="equipment_purchase" text="Equipment Purchase" />
+                                    <core:Item id="_IDGenItem32" key="inventory_financing" text="Inventory Financing" />
+                                    <core:Item id="_IDGenItem33" key="debt_consolidation" text="Debt Consolidation" />
+                                    <core:Item id="_IDGenItem34" key="real_estate" text="Real Estate Purchase" />
+                                </ComboBox>
+
+                                <Label id="_IDGenLabel33" text="Detailed Purpose:" required="true" />
+                                <TextArea id="detailedPurpose" value="{/loanPurpose/detailedPurpose}" rows="4"
+                                    placeholder="Please provide detailed explanation of how the loan will be used..." />
+
+                                <Label id="_IDGenLabel34" text="Total Project Cost (USD):" required="true" />
+                                <Input id="projectCost" value="{/loanPurpose/projectCost}" type="Number" />
+
+                                <Label id="_IDGenLabel35" text="Own Contribution (USD):" required="true" />
+                                <Input id="ownContribution" value="{/loanPurpose/ownContribution}" type="Number" />
+
+                                <Label id="_IDGenLabel36" text="Required Loan Amount (USD):" required="true" />
+                                <Input id="requiredLoanAmount" value="{/loanPurpose/loanAmount}" type="Number" />
+
+                                <Label id="_IDGenLabel37" text="Preferred Tenure (Months):" required="true" />
+                                <ComboBox id="loanTenure" value="{/loanPurpose/tenure}">
+                                    <core:Item id="_IDGenItem35" key="12" text="1 Year (12 Months)" />
+                                    <core:Item id="_IDGenItem36" key="24" text="2 Years (24 Months)" />
+                                    <core:Item id="_IDGenItem37" key="36" text="3 Years (36 Months)" />
+                                    <core:Item id="_IDGenItem38" key="60" text="5 Years (60 Months)" />
+                                    <core:Item id="_IDGenItem39" key="84" text="7 Years (84 Months)" />
+                                    <core:Item id="_IDGenItem40" key="120" text="10 Years (120 Months)" />
+                                </ComboBox>
+
+                                <Label id="_IDGenLabel38" text="Preferred Interest Rate (%):" />
+                                <Input id="preferredInterestRate" value="{/loanPurpose/preferredInterestRate}" type="Number" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </content>
+                </Panel>
+
+                <!-- Document Upload Panel -->
+                <Panel id="documentUploadPanel" headerText="Document Upload" class="sapUiMediumMargin" expandable="true" expanded="true">
+                    <content>
+                        <VBox id="_IDGenVBox1" class="sapUiMediumMargin">
+                            <Title id="_IDGenTitle3" text="Required Documents" class="sapUiSmallMarginBottom" />
+                            <Text id="_IDGenText" text="Please upload the following documents (PDF format preferred, max 5MB per file):" class="sapUiSmallMarginBottom" />
+                            
+                            <List id="_IDGenList" items="{/documentsRequired}" headerText="Document Checklist:">
+                                <CustomListItem id="_IDGenCustomListItem">
+                                    <HBox id="_IDGenHBox3" alignItems="Center" justifyContent="SpaceBetween">
+                                        <VBox id="_IDGenVBox2">
+                                            <Text id="_IDGenText1" text="{name}" />
+                                            <Text id="_IDGenText2" text="{description}" class="sapUiTinyMarginTop" />
+                                        </VBox>
+                                        <VBox id="_IDGenVBox3">
+                                            <UploadCollection id="_IDGenUploadCollection"
+                                                maximumFilenameLength="50"
+                                                maximumFileSize="5"
+                                                multiple="false"
+                                                uploadEnabled="true"
+                                                fileType="pdf,doc,docx,jpg,png"
+                                                mimeType="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png"
+                                                typeMissmatch="onTypeMissmatch"
+                                                fileSizeExceed="onFileSizeExceed"
+                                                uploadComplete="onUploadComplete"/>
+                                        </VBox>
+                                    </HBox>
+                                </CustomListItem>
+                            </List>
+                        </VBox>
+                    </content>
+                </Panel>
+
+                <!-- Form Actions Panel -->
+                <Panel id="formActionsPanel" class="sapUiMediumMargin">
+                    <content>
+                        <HBox id="_IDGenHBox" justifyContent="SpaceBetween" alignItems="Center" class="sapUiMediumMargin">
+                            <HBox id="_IDGenHBox1">
+                                <Button id="saveDraftBtn" text="Save Draft" press="onSaveDraft" type="Transparent" icon="sap-icon://save" />
+                                <Button id="previewBtn" text="Preview" press="onPreview" type="Emphasized" icon="sap-icon://preview" class="sapUiTinyMarginBegin" />
+                            </HBox>
+                            <HBox id="_IDGenHBox2">
+                                <Button id="resetFormBtn" text="Reset Form" press="onResetForm" type="Reject" icon="sap-icon://reset" />
+                                <Button id="submitBtn" text="Submit Application" press="onSubmit" type="Accept" icon="sap-icon://complete" class="sapUiTinyMarginBegin" />
+                            </HBox>
+                        </HBox>
+                    </content>
+                </Panel>
+
+            </ScrollContainer>
+        </content>
+    </Page>
+</mvc:View>
+
